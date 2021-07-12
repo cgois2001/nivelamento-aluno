@@ -41,11 +41,12 @@ puts calcula_segundos_por_idade(20).to_s + ' segundos de vida'
 # que será um valor informado para a função
 
 def converte_seg_em_anos(segundos)
-    anos = (segundos/60/60/24/365).to_f
+    anos = (segundos/60.0/60/24/365)
     return anos
 end
 
 puts converte_seg_em_anos(31536000).to_s + ' anos'
 puts converte_seg_em_anos(63072000).to_s + ' anos'
 puts converte_seg_em_anos(315360000).to_s + ' anos'
+puts converte_seg_em_anos(1232000000).to_s + ' anos'
 
