@@ -25,5 +25,6 @@ puts
 
 # quantos anos em 1232 milhões de segundos
 segundos_de_vida = 1232000000
-segundos_no_ano.to_f
+
+segundos_no_ano = segundos_no_ano.to_f
 puts segundos_no_ano.to_s + ' + ' + segundos_de_vida.to_s + ' = ' + (segundos_de_vida/segundos_no_ano).to_s + ' anos de vida'
