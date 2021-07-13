@@ -18,4 +18,4 @@ def calcula_batimentos_na_vida(idade)
 end
 
 print 'Você já viveu ' + converte_anos_em_dias(idade).to_s + ' dias '
-print 'e seu coração bateu ' + calcula_batimentos_na_vida(idade).to_s + ' vezes até agora'
+print 'e seu coração já bateu ' + calcula_batimentos_na_vida(idade).to_s + ' vezes até agora'
