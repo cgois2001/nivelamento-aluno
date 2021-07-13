@@ -14,7 +14,7 @@ def converte_anos_em_dias(idade)
 end
 
 def calcula_batimentos_na_vida(idade)
-    return converte_anos_em_dias(idade) * 60 * 80
+    return converte_anos_em_dias(idade) * 24 * 60 * 80
 end
 
 print 'Você já viveu ' + converte_anos_em_dias(idade).to_s + ' dias '
