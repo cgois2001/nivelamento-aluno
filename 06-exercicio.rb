@@ -12,25 +12,22 @@ print 'defina agora o valor da taxa de ocupação de leitos '
 taxa_ocupacao = gets.to_f
 
 def fase_pandemica(taxa_vacinacao, fator_transmissao, taxa_ocupacao)
-
+    
 # Obs.: validar os parâmetros, considerando as seguintes regras:
 # taxa de vacinação deve ser um número entre 0.0 e 1.0 (1.0 = 100%)
 # fator de transmissão dever ser um número maior ou igual a zero
 # taxa de ocupação de leitos deve ser um número entre 0.0 e 1.0 (1.0 = 100%)
 
-    if taxa_vacinacao < 0.0 || taxa_vacinacao > 1.0
-     erro = 'algum dos valores inseridos são inválidos, a taxa de vacinação e de ocupação tem que ser um 
+    erro = 'algum dos valores inseridos são inválidos, a taxa de vacinação e de ocupação tem que ser um 
 valor entre 0 e 1, e o fator de transmissão deve ser um valor positivo.'
+
+    if taxa_vacinacao < 0.0 || taxa_vacinacao > 1.0
         return erro
 
     elsif fator_transmissao < 0.0
-     erro = 'algum dos valores inseridos são inválidos, a taxa de vacinação e de ocupação tem que ser um 
-valor entre 0 e 1, e o fator de transmissão deve ser um valor positivo.'
         return erro
 
     elsif taxa_ocupacao < 0.0 || taxa_ocupacao > 1.0
-     erro = 'algum dos valores inseridos são inválidos, a taxa de vacinação e de ocupação tem que ser um 
-valor entre 0 e 1, e o fator de transmissão deve ser um valor positivo.'
         return erro
 
     end
@@ -46,28 +43,24 @@ valor entre 0 e 1, e o fator de transmissão deve ser um valor positivo.'
  #ou quando o fator de transmissão for maior ou igual a 1.
 #FASE ROXA: quando a taxa de ocupação de leitos estiver acima de 90%.
 
-    if taxa_vacinacao > 0.8
-     fase_azul = 'FASE AZUL, a taxa de vacinação já passou dos 80%'
-     return fase_azul
+    if taxa_vacinacao > 0.8 
+     return 'AZUL'
 
     elsif taxa_ocupacao <= 0.5 && fator_transmissao < 1
-     fase_verde = "FASE VERDE, a taxa de ocupação é menor que 50% e o fator de transmissão é menor que 1"
-     return fase_verde
+     return 'VERDE'
 
     elsif taxa_ocupacao > 0.5 && taxa_ocupacao < 0.65 && fator_transmissao < 1
-        fase_amarela = 'FASE AMARELA, a taxa de ocupação é maior que 50%, e o fator de transmissão é menor que 1'
-        return fase_amarela
+        return 'AMARELA'
 
     elsif taxa_ocupacao > 0.65 && taxa_ocupacao < 0.8 && fator_transmissao < 1
-        fase_laranja = 'FASE LARANJA, a taxa de ocupação é maior que 65%, e o fator de transmissão é menor que 1'
-        return fase_laranja
+        return 'LARANJA'
+
+    elsif taxa_ocupacao > 0.9 
+        return 'ROXA'
 
     elsif taxa_ocupacao > 0.8 && taxa_ocupacao < 0.9 || fator_transmissao >= 1
-     fase_vermelha = 'FASE VERMELHA, a taxa de ocupação é maior que 80%, ou o fator de transmissão é maior ou igual a 1'
-     return fase_vermelha
+     return 'VERMELHA'
 
-    elsif taxa_ocupacao > 0.9
-     fase_roxa = 'FASE ROXA, a taxa de ocupação é maior que 90%'
     end
 end
 
