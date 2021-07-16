@@ -19,35 +19,34 @@ tentativas = 0
 while chute_i != numero
     
     if chute != "0" && chute_i == 0
-    puts mensagem_erro
-    puts 'tente novamente'
-    chute = gets.chomp
-    chute_i = chute.to_i
-    puts chute_i
-    next
+        puts mensagem_erro
+        puts 'tente novamente'
+        chute = gets.chomp
+        chute_i = chute.to_i
+        puts chute_i
+        next
 
     elsif chute_i <0 || chute_i > 100
-    puts mensagem_erro
-    puts 'tente novamente'
-    chute = gets.chomp
-    chute_i = chute.to_i
-    next
-    
+        puts mensagem_erro
+        puts 'tente novamente'
+        chute = gets.chomp
+        chute_i = chute.to_i
+        next
+        
+    elsif chute_i < numero
+        puts "Errou! O número digitado é menor do que o pensado"
+        tentativas = tentativas + 1
+        puts 'tente novamente'
+        chute = gets.chomp
+        chute_i = chute.to_i
+        next
 
-    elsif numero > chute.to_i
-    puts "Errou! O número digitado é menor do que o pensado"
-    tentativas = tentativas + 1
-    puts 'tente novamente'
-    chute = gets.chomp
-    chute_i = chute.to_i
-    next
-
-    elsif numero < chute_i
-    puts "Errou! O número digitado é maior do que o pensado"
-    tentativas = tentativas + 1
-    puts 'tente novamente'
-    chute = gets.chomp
-    chute_i = chute.to_i
+    elsif chute_i > numero
+        puts "Errou! O número digitado é maior do que o pensado"
+        tentativas = tentativas + 1
+        puts 'tente novamente'
+        chute = gets.chomp
+        chute_i = chute.to_i
     end
 end
 
