@@ -11,10 +11,10 @@ n = 1
     conta = n % x
     conta1 = n % y
     validacao = conta == 0 && conta1 == 0
-        
         if validacao == true 
             return n
-        else n = n + 1
+        else 
+        n = n + 1
         end
     end
 end
