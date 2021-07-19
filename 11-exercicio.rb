@@ -11,8 +11,10 @@ def posicao_no_array(array, elemento)
     end
     return -1
 end
+
 puts 'Qual elemento você quer encontrar?'
 elemento = gets.to_i
+
 if posicao_no_array(array, elemento) == -1
     print posicao_no_array(array, elemento)
 else
