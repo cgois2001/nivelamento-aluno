@@ -34,13 +34,13 @@ def remove_da_posicao(array, posicao)
         
         #segunda versão
             for n in (0..x-2)
-                if n >= posicao
+                if n == posicao
                     novo_array[posicao] = array[posicao + 1]
                     posicao = posicao + 1
                 else
                     novo_array[n] = array[n]
                 end
-            end
+            end                                            
     end
     return novo_array
 end

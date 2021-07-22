@@ -1,7 +1,7 @@
 def insere_no_array(array, valor, posicao)
     n = array.size
     until n == posicao
-        if posicao > n
+        if posicao >= n
             return false
         else 
         array[n] = array[n-1]
